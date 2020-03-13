@@ -1,0 +1,25 @@
+---
+
+- name: Ship the swarm config
+  sudo: True
+  template: >
+    src=swarm_config.j2
+    dest=/etc/swarm_config
+    owner=root
+    group=root
+    mode=0644
+  notify:
+    - restart swarm
+  when: swarm_discovery == 'file'
+
+- name: Install SSL Certs
+  sudo: True
+  copy: >
+    src=tls
+    dest=/etc/pki
+    owner=root
+    group=root
+    mode=0600
+  notify:
+    - restart swarm
+  when: use_tls

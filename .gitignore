@@ -1,0 +1,9 @@
+.idea
+*.iml
+.vagrant
+/tls
+!/tls/openss.cnf
+/ansible/roles/docker/files/tls
+/ansible/roles/docker_swarm/files/tls
+/ansible/group_vars/all.yml
+.vagrant

@@ -1,0 +1,19 @@
+[local]
+localhost
+
+[vagrant_dockerhosts]
+dockerhost01 ansible_ssh_private_key_file=../.vagrant/machines/dockerhost01/virtualbox/private_key
+dockerhost02 ansible_ssh_private_key_file=../.vagrant/machines/dockerhost02/virtualbox/private_key
+dockerhost03 ansible_ssh_private_key_file=../.vagrant/machines/dockerhost03/virtualbox/private_key
+
+[vagrant_dockerswarm]
+dockerswarm01 ansible_ssh_private_key_file=../.vagrant/machines/dockerswarm01/virtualbox/private_key
+
+[coreos]
+dockerhost01
+dockerhost02
+dockerhost03
+
+[coreos:vars]
+ansible_ssh_user=core
+ansible_python_interpreter=/home/core/bin/python
